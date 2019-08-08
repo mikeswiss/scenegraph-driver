@@ -99,11 +99,11 @@ class Builder {
             throw new Error(`Developer password must be a string, but is <${typeof config.devPassword}>`);
         }
         const driver = new SGDriver(config.host, sgClient, config.devPassword);
-        const zip = new ZipUtil(config);  
+        // const zip = new ZipUtil(config);
         await driver.connect();
         await driver.sendKey(Key.HOME, 1000);
-        await zip.archive();
-        await zip.upload();
+        // await zip.archive();
+        // await zip.upload();
         return driver;
     }
 }
